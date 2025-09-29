@@ -37941,3 +37941,4041 @@ MorphicRenderLoop>>doOneCycleWhile:
 			Processor terminateRealActive] in FullBlockClosure(BlockClosure)>>newProcess
 -------------------------------------------------------------------------------
 
+THERE_BE_DRAGONS_HERE
+There is no request entity yet, cannot set its content-type
+26 September 2025 5:07:27.429915 pm
+
+VM: Mac OS - arm64 - 1000 - CoInterpreter VMMaker-tonel.1 uuid: 796cf0ae-9df8-0d00-bd87-dbbf06d86bc4 Aug 13 2025
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 796cf0ae-9df8-0d00-bd87-dbbf06d86bc4 Aug 13 2025
+v10.3.8+0.a7c8a0bba - Commit: a7c8a0bba - Date: 2025-08-12 19:03:31 +0200
+
+Image: Pharo13.1.0SNAPSHOT [Build information: Pharo-13.1.0+SNAPSHOT.build.699.sha.be5cc741badcf8f5202497545e7d75c65116d5d0 (64 Bit)]
+
+ZnClient(Object)>>error:
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		aString: 	'There is no request entity yet, cannot set its content-type'
+	Receiver's instance variables: 
+		request: 	a ZnRequest()
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	nil
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+ZnClient>>contentType:
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		mimeType: 	application/json
+	Receiver's instance variables: 
+		request: 	a ZnRequest()
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	nil
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+[
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] in [
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+	Receiver: nil
+	Arguments and temporary variables: 
+		sql: 	'Select * from khan;'
+		body: 	'Select * from khan'
+		valid: 	true
+		endsWithSemi: 	true
+		rest: 	'* from khan'
+		lc: 	'select * from khan'
+		fromPos: 	9
+		afterFrom: 	'khan'
+		jsonEscaped: 	'Select * from khan'
+		payload: 	'{"sql":"Select * from khan"}'
+		serverUrl: 	'http://localhost:8080/api/sql'
+		client: 	a ZnClient
+		resp: 	nil
+		status: 	nil
+		respBody: 	nil
+	Receiver's instance variables: 
+nil
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+         [..]
+	Arguments and temporary variables: 
+		exception: 	ZnHttpUnsuccessful
+		handlerAction: 	[ :ex | UIManager default alert: 'HTTP error: ', ex response[..]
+	Receiver's instance variables: 
+		outerContext: 	[
+    [
+        client := ZnClient new.
+        client
+      [..]
+		compiledBlock: 	a CompiledBlock: [
+        client := ZnClient new.
+        c[..]
+		numArgs: 	0
+		receiver: 	nil
+
+
+[
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+	Receiver: nil
+	Arguments and temporary variables: 
+		sql: 	'Select * from khan;'
+		body: 	'Select * from khan'
+		valid: 	true
+		endsWithSemi: 	true
+		rest: 	'* from khan'
+		lc: 	'select * from khan'
+		fromPos: 	9
+		afterFrom: 	'khan'
+		jsonEscaped: 	'Select * from khan'
+		payload: 	'{"sql":"Select * from khan"}'
+		serverUrl: 	'http://localhost:8080/api/sql'
+		client: 	a ZnClient
+		resp: 	nil
+		status: 	nil
+		respBody: 	nil
+	Receiver's instance variables: 
+nil
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+   [..]
+	Arguments and temporary variables: 
+		exception: 	NetworkError
+		handlerAction: 	[ :ex | UIManager default alert: 'Network error: ', ex messa[..]
+	Receiver's instance variables: 
+		outerContext: 	UndefinedObject>>DoIt
+		compiledBlock: 	a CompiledBlock: [
+    [
+        client := ZnClient new.
+   [..]
+		numArgs: 	0
+		receiver: 	nil
+
+
+UndefinedObject>>DoIt
+	Receiver: nil
+	Arguments and temporary variables: 
+		client: 	a ZnClient
+		resp: 	nil
+		status: 	nil
+		respBody: 	nil
+		sql: 	'Select * from khan;'
+		body: 	'Select * from khan'
+		valid: 	true
+		endsWithSemi: 	true
+		rest: 	'* from khan'
+		lc: 	'select * from khan'
+		fromPos: 	9
+		afterFrom: 	'khan'
+		jsonEscaped: 	'Select * from khan'
+		payload: 	'{"sql":"Select * from khan"}'
+		serverUrl: 	'http://localhost:8080/api/sql'
+	Receiver's instance variables: 
+nil
+
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+	Receiver: an OCReceiverDoItSemanticScope
+	Arguments and temporary variables: 
+		doItMethod: 	UndefinedObject>>#DoIt
+	Receiver's instance variables: 
+		outerScope: 	nil
+		targetReceiver: 	nil
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+		doItMethod: 	UndefinedObject>>#DoIt
+	Receiver's instance variables: 
+		ast: 	DoIt
+
+	| sql "Part 1 — SELECT-only validator (build + send JSON payloa[..]
+		source: 	'"Part 1 — SELECT-only validator (build + send JSON payload)"
+| sql[..]
+		compilationContext: 	an OCCompilationContext
+		compilationContextClass: 	nil
+		permitFaulty: 	false
+		permitUndeclared: 	false
+		failBlock: 	[ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncem[..]
+		logged: 	nil
+		changeStamp: 	nil
+		protocol: 	nil
+		requestor: 	a StPlaygroundInteractionModel
+		priorMethod: 	nil
+
+
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		result := self interactionModel compiler
+			source: aString;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self refreshStyling ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError:
+	Receiver: a SpCodePresenter
+	Arguments and temporary variables: 
+		aString: 	'"Part 1 — SELECT-only validator (build + send JSON payload)"
+| sq[..]
+		compileErrorBlock: 	[ ^ self ]
+		errorBlock: 	[ :e | e pass ]
+		result: 	nil
+		oldBindings: 	a Dictionary(#afterFrom->nil #allowedChars->nil #body->nil #c-[..]
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicCodeAdapter)
+		announcer: 	an Announcer
+		owner: 	a StPlaygroundPagePresenter
+		adapter: 	a SpMorphicCodeAdapter
+		needRebuild: 	true
+		eventHandler: 	a SpEventHandler
+		properties: 	a SmallDictionary()
+		application: 	nil
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Code' ]
+		additionalSubpresentersMap: 	nil
+		layout: 	an ObservableValueHolder[ a SpAbstractWidgetLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ a SpCommandGroup ]
+		internalActionGroup: 	a SpActionGroup
+		borderWidth: 	an ObservableValueHolder[ nil ]
+		borderColor: 	an ObservableValueHolder[ nil ]
+		dragEnabled: 	an ObservableValueHolder[ false ]
+		dropEnabled: 	an ObservableValueHolder[ false ]
+		color: 	an ObservableValueHolder[ nil ]
+		help: 	an ObservableValueHolder[ nil ]
+		enabled: 	an ObservableValueHolder[ true ]
+		wantsDrop: 	an ObservableValueHolder[ [ :transfer | self dropEnabled ] ]
+		acceptDrop: 	an ObservableValueHolder[ [ :transfer | ] ]
+		deferredActions: 	nil
+		selection: 	an ObservableValueHolder[ (1 to: 2859) ]
+		text: 	an ObservableValueHolder[ '"Part 1 — SELECT-only validator (build + s[..]
+		actionToPerform: 	an ObservableValueHolder[ [ :txt |  ] ]
+		readSelection: 	an ObservableValueHolder[ [ selection ] ]
+		placeholder: 	an ObservableValueHolder[ '' ]
+		editable: 	an ObservableValueHolder[ true ]
+		contextMenu: 	an ObservableValueHolder[ nil ]
+		scrollValue: 	an ObservableValueHolder[ (0@1.0) ]
+		editionContextMenu: 	an ObservableValueHolder[ true ]
+		wrapWord: 	an ObservableValueHolder[ true ]
+		undoRedoHistory: 	true
+		wrapScrollBars: 	true
+		propagateNaturalHeight: 	false
+		propagateNaturalWidth: 	false
+		scrollBarStyles: 	#()
+		syntaxHighlight: 	an ObservableValueHolder[ true ]
+		smartCharacters: 	an ObservableValueHolder[ true ]
+		lineNumbers: 	an ObservableValueHolder[ true ]
+		interactionModel: 	an ObservableValueHolder[ a StPlaygroundInteractionModel ]
+		overrideContextMenu: 	true
+		submitBlock: 	nil
+		resetBlock: 	nil
+		environment: 	nil
+		systemNavigation: 	nil
+		syntaxHighlightTheme: 	an ObservableValueHolder[ nil ]
+		styleScheme: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+[..]
+	Arguments and temporary variables: 
+		exception: 	Error
+		handlerAction: 	[ :e |
+		self announcer announce: (SpCodeEvaluationFailedAnn[..]
+	Receiver's instance variables: 
+		outerContext: 	SpCodePresenter>>evaluate:onCompileError:onError:
+		compiledBlock: 	a CompiledBlock: [
+		self announcer announce: (SpCodeWillBeE[..]
+		numArgs: 	0
+		receiver: 	a SpCodePresenter
+
+
+SpCodePresenter>>evaluate:onCompileError:onError:
+	Receiver: a SpCodePresenter
+	Arguments and temporary variables: 
+		result: 	nil
+		oldBindings: 	a Dictionary(#afterFrom->nil #allowedChars->nil #body->nil #c-[..]
+		aString: 	'"Part 1 — SELECT-only validator (build + send JSON payload)"
+| sq[..]
+		compileErrorBlock: 	[ ^ self ]
+		errorBlock: 	[ :e | e pass ]
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicCodeAdapter)
+		announcer: 	an Announcer
+		owner: 	a StPlaygroundPagePresenter
+		adapter: 	a SpMorphicCodeAdapter
+		needRebuild: 	true
+		eventHandler: 	a SpEventHandler
+		properties: 	a SmallDictionary()
+		application: 	nil
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Code' ]
+		additionalSubpresentersMap: 	nil
+		layout: 	an ObservableValueHolder[ a SpAbstractWidgetLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ a SpCommandGroup ]
+		internalActionGroup: 	a SpActionGroup
+		borderWidth: 	an ObservableValueHolder[ nil ]
+		borderColor: 	an ObservableValueHolder[ nil ]
+		dragEnabled: 	an ObservableValueHolder[ false ]
+		dropEnabled: 	an ObservableValueHolder[ false ]
+		color: 	an ObservableValueHolder[ nil ]
+		help: 	an ObservableValueHolder[ nil ]
+		enabled: 	an ObservableValueHolder[ true ]
+		wantsDrop: 	an ObservableValueHolder[ [ :transfer | self dropEnabled ] ]
+		acceptDrop: 	an ObservableValueHolder[ [ :transfer | ] ]
+		deferredActions: 	nil
+		selection: 	an ObservableValueHolder[ (1 to: 2859) ]
+		text: 	an ObservableValueHolder[ '"Part 1 — SELECT-only validator (build + s[..]
+		actionToPerform: 	an ObservableValueHolder[ [ :txt |  ] ]
+		readSelection: 	an ObservableValueHolder[ [ selection ] ]
+		placeholder: 	an ObservableValueHolder[ '' ]
+		editable: 	an ObservableValueHolder[ true ]
+		contextMenu: 	an ObservableValueHolder[ nil ]
+		scrollValue: 	an ObservableValueHolder[ (0@1.0) ]
+		editionContextMenu: 	an ObservableValueHolder[ true ]
+		wrapWord: 	an ObservableValueHolder[ true ]
+		undoRedoHistory: 	true
+		wrapScrollBars: 	true
+		propagateNaturalHeight: 	false
+		propagateNaturalWidth: 	false
+		scrollBarStyles: 	#()
+		syntaxHighlight: 	an ObservableValueHolder[ true ]
+		smartCharacters: 	an ObservableValueHolder[ true ]
+		lineNumbers: 	an ObservableValueHolder[ true ]
+		interactionModel: 	an ObservableValueHolder[ a StPlaygroundInteractionModel ]
+		overrideContextMenu: 	true
+		submitBlock: 	nil
+		resetBlock: 	nil
+		environment: 	nil
+		systemNavigation: 	nil
+		syntaxHighlightTheme: 	an ObservableValueHolder[ nil ]
+		styleScheme: 	nil
+
+
+StPlaygroundPagePresenter>>doEvaluateAndGo
+	Receiver: a StPlaygroundPagePresenter
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicBoxAdapter)
+		announcer: 	an Announcer
+		owner: 	a SpMillerColumnPresenter
+		adapter: 	a SpMorphicBoxAdapter
+		needRebuild: 	true
+		eventHandler: 	nil
+		properties: 	a SmallDictionary()
+		application: 	a StPharoApplication
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Playground' ]
+		additionalSubpresentersMap: 	a Dictionary()
+		layout: 	an ObservableValueHolder[ a SpBoxLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ nil ]
+		internalActionGroup: 	nil
+		text: 	a SpCodePresenter
+		toolbar: 	a SpToolbarPresenter
+		statusbar: 	a SpPresenter
+		lineLabel: 	a SpLabelPresenter
+		toggleLineNumberButton: 	a SpToggleButtonPresenter
+		page: 	a StPlaygroundPage
+		activationBlock: 	[ :selection |
+		self changeSelection: selection from: new[..]
+		loading: 	false
+
+
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+	Receiver: a StPlaygroundPagePresenter
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicBoxAdapter)
+		announcer: 	an Announcer
+		owner: 	a SpMillerColumnPresenter
+		adapter: 	a SpMorphicBoxAdapter
+		needRebuild: 	true
+		eventHandler: 	nil
+		properties: 	a SmallDictionary()
+		application: 	a StPharoApplication
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Playground' ]
+		additionalSubpresentersMap: 	a Dictionary()
+		layout: 	an ObservableValueHolder[ a SpBoxLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ nil ]
+		internalActionGroup: 	nil
+		text: 	a SpCodePresenter
+		toolbar: 	a SpToolbarPresenter
+		statusbar: 	a SpPresenter
+		lineLabel: 	a SpLabelPresenter
+		toggleLineNumberButton: 	a SpToggleButtonPresenter
+		page: 	a StPlaygroundPage
+		activationBlock: 	[ :selection |
+		self changeSelection: selection from: new[..]
+		loading: 	false
+
+
+StPlaygroundDoItCommand>>execute
+	Receiver: a StPlaygroundDoItCommand
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		context: 	a StPlaygroundPagePresenter
+		basicName: 	'Do it all'
+		basicDescription: 	'Do it all and inspect.'
+
+
+SpCommand(CmCommandDecorator)>>execute
+	Receiver: a SpCommand(Do it all)
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		decoratedCommand: 	a StPlaygroundDoItCommand
+		iconProvider: 	a StPharoApplication
+		iconName: 	#go
+		shortcutKey: 	nil
+		displayStrategy: 	a CmUIDisableWhenCantBeRun
+		positionStrategy: 	a CmUILeftPositionStrategy
+		buildPresenterBlock: 	[ :specCommand | 
+		aButtonClass new
+			label: specCom[..]
+		presenter: 	a SpToolbarButtonPresenter
+
+
+[ specCommand execute ] in [ :specCommand | 
+		aButtonClass new
+			label: specCommand name;
+			help: specCommand description;
+			in: [ :button | 
+				specCommand hasIcon
+					ifTrue: [ button icon: specCommand icon ] ];
+			action: [ specCommand execute ];
+			enabled: specCommand canBeExecuted;
+			yourself ] in SpCommand>>configureAsButtonOfClass:
+	Receiver: a SpCommand(Do it all)
+	Arguments and temporary variables: 
+		aButtonClass: 	nil
+		specCommand: 	a SpCommand(Do it all)
+	Receiver's instance variables: 
+		decoratedCommand: 	a StPlaygroundDoItCommand
+		iconProvider: 	a StPharoApplication
+		iconName: 	#go
+		shortcutKey: 	nil
+		displayStrategy: 	a CmUIDisableWhenCantBeRun
+		positionStrategy: 	a CmUILeftPositionStrategy
+		buildPresenterBlock: 	[ :specCommand | 
+		aButtonClass new
+			label: specCom[..]
+		presenter: 	a SpToolbarButtonPresenter
+
+
+FullBlockClosure(BlockClosure)>>cull:
+	Receiver: [ specCommand execute ]
+	Arguments and temporary variables: 
+		anArg: 	a SpToolbarButtonPresenter
+	Receiver's instance variables: 
+		outerContext: 	[ :specCommand | 
+		aButtonClass new
+			label: specCommand na[..]
+		compiledBlock: 	a CompiledBlock: [ specCommand execute ]
+		numArgs: 	0
+		receiver: 	a SpCommand(Do it all)
+
+
+SpMorphicToolbarButtonAdapter>>execute
+	Receiver: a SpMorphicToolbarButtonAdapter
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpToolbarButtonMorph(695084544))
+		announcer: 	nil
+		model: 	a SpToolbarButtonPresenter
+		widget: 	a SpToolbarButtonMorph(695084544)
+		selector: 	nil
+		owner: 	a SpToolbarButtonPresenter
+		unsubscribed: 	false
+
+
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+	Receiver: a SpToolbarButtonMorph(695084544)
+	Arguments and temporary variables: 
+		event: 	[(18@11) mouseUp 367559 nil]
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(1049703168)
+		submorphs: 	an Array(an AlignmentMorph(1052700416))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (895015680) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(984746496)'Do it all'
+		iconMorph: 	an ImageMorph(402667008)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+	Receiver: a SpToolbarButtonMorph(695084544)
+	Arguments and temporary variables: 
+		evt: 	[(18@11) mouseUp 367559 nil]
+		all: 	an Array(a SpToolbarButtonMorph(695084544) a SpToolbarButtonMorph(6207[..]
+		m: 	a SpToolbarButtonMorph(695084544)
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(1049703168)
+		submorphs: 	an Array(an AlignmentMorph(1052700416))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (895015680) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(984746496)'Do it all'
+		iconMorph: 	an ImageMorph(402667008)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+Array(SequenceableCollection)>>do:
+	Receiver: an Array(a SpToolbarButtonMorph(695084544) a SpToolbarButtonMorph(620782080) a SpToolb[..]
+	Arguments and temporary variables: 
+		aBlock: 	[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTru[..]
+		index: 	1
+	Receiver's instance variables: 
+an Array(a SpToolbarButtonMorph(695084544) a SpToolbarButtonMorph(620782080) a SpToolb[..]
+
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+	Receiver: a SpToolbarButtonMorph(695084544)
+	Arguments and temporary variables: 
+		evt: 	[(18@11) mouseUp 367559 nil]
+		all: 	an Array(a SpToolbarButtonMorph(695084544) a SpToolbarButtonMorph(6207[..]
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(1049703168)
+		submorphs: 	an Array(an AlignmentMorph(1052700416))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (895015680) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(984746496)'Do it all'
+		iconMorph: 	an ImageMorph(402667008)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+	Receiver: a SpToolbarButtonMorph(695084544)
+	Arguments and temporary variables: 
+		anEvent: 	[(18@11) mouseUp 367559 nil]
+		result: 	nil
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(1049703168)
+		submorphs: 	an Array(an AlignmentMorph(1052700416))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (895015680) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(984746496)'Do it all'
+		iconMorph: 	an ImageMorph(402667008)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+MouseButtonEvent>>sentTo:
+	Receiver: [(18@11) mouseUp 367559 nil]
+	Arguments and temporary variables: 
+		anObject: 	a SpToolbarButtonMorph(695084544)
+	Receiver's instance variables: 
+		timeStamp: 	367559
+		source: 	a HandMorph(268082944)
+		windowIndex: 	nil
+		type: 	#mouseUp
+		buttons: 	0
+		position: 	(18@11)
+		handler: 	nil
+		wasHandled: 	true
+		whichButton: 	4
+
+
+SpToolbarButtonMorph(Morph)>>handleEvent:
+	Receiver: a SpToolbarButtonMorph(695084544)
+	Arguments and temporary variables: 
+		anEvent: 	[(18@11) mouseUp 367559 nil]
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(1049703168)
+		submorphs: 	an Array(an AlignmentMorph(1052700416))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (895015680) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(984746496)'Do it all'
+		iconMorph: 	an ImageMorph(402667008)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+	Receiver: a SpToolbarButtonMorph(695084544)
+	Arguments and temporary variables: 
+		anEvent: 	[(18@11) mouseUp 367559 nil]
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(1049703168)
+		submorphs: 	an Array(an AlignmentMorph(1052700416))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (895015680) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(984746496)'Do it all'
+		iconMorph: 	an ImageMorph(402667008)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		anEvent: 	[(23@57) mouseUp 367559 nil]
+		focusHolder: 	a SpToolbarButtonMorph(695084544)
+		aBlock: 	[self mouseFocus: nil]
+		w: 	a WorldMorph(883747328) [world]
+		transformedEvent: 	[(18@11) mouseUp 367559 nil]
+		result: 	nil
+	Receiver's instance variables: 
+		bounds: 	(930@510) corner: (946@526)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a RubEditingArea(866060032)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(930@510) mouseOver 373351 nil]
+		targetOffset: 	(26.0@10.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+		result := focusHolder handleFocusEvent: transformedEvent.
+	]
+	Arguments and temporary variables: 
+		exception: 	Error
+		handlerAction: 	[ :ex |
+			ActiveWorld := priorWorld.
+			ex pass ]
+	Receiver's instance variables: 
+		outerContext: 	HandMorph>>sendFocusEvent:to:clear:
+		compiledBlock: 	a CompiledBlock: [
+		result := focusHolder handleFocusEvent:[..]
+		numArgs: 	0
+		receiver: 	a HandMorph(268082944)
+
+
+WorldMorph>>becomeActiveDuring:
+	Receiver: a WorldMorph(883747328) [world]
+	Arguments and temporary variables: 
+		aBlock: 	[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	]
+		priorWorld: 	a WorldMorph(883747328) [world]
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (1470@919)
+		owner: 	nil
+		submorphs: 	an Array(a MenubarMorph(630320896) a TaskbarMorph(348776192) a S[..]
+		fullBounds: 	nil
+		color: 	(Color r: 0.14858260019550343 g: 0.19648093841642228 b: 0.2199413489[..]
+		extension: 	a MorphExtension (328068608) [other:  (dragEnabled -> true) (dro[..]
+		borderWidth: 	0
+		borderColor: 	(Color r: 0.8611925708699902 g: 1.0 b: 0.7223851417399805 alph[..]
+		backgroundMorph: 	nil
+		worldState: 	a WorldState
+		griddingOn: 	nil
+		zoomFactor: 	1
+
+
+HandMorph>>sendFocusEvent:to:clear:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		result: 	nil
+		anEvent: 	[(23@57) mouseUp 367559 nil]
+		focusHolder: 	a SpToolbarButtonMorph(695084544)
+		aBlock: 	[self mouseFocus: nil]
+		w: 	a WorldMorph(883747328) [world]
+		transformedEvent: 	[(18@11) mouseUp 367559 nil]
+	Receiver's instance variables: 
+		bounds: 	(930@510) corner: (946@526)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a RubEditingArea(866060032)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(930@510) mouseOver 373351 nil]
+		targetOffset: 	(26.0@10.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+HandMorph>>sendEvent:focus:clear:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		anEvent: 	[(23@57) mouseUp 367559 nil]
+		focusHolder: 	a SpToolbarButtonMorph(695084544)
+		aBlock: 	[self mouseFocus: nil]
+		result: 	nil
+	Receiver's instance variables: 
+		bounds: 	(930@510) corner: (946@526)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a RubEditingArea(866060032)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(930@510) mouseOver 373351 nil]
+		targetOffset: 	(26.0@10.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+HandMorph>>sendMouseEvent:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		anEvent: 	[(23@57) mouseUp 367559 nil]
+	Receiver's instance variables: 
+		bounds: 	(930@510) corner: (946@526)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a RubEditingArea(866060032)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(930@510) mouseOver 373351 nil]
+		targetOffset: 	(26.0@10.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+HandMorph>>handleEvent:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		anEvent: 	[(23@57) mouseUp 367559 nil]
+		evt: 	[(23@57) mouseUp 367559 nil]
+	Receiver's instance variables: 
+		bounds: 	(930@510) corner: (946@526)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a RubEditingArea(866060032)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(930@510) mouseOver 373351 nil]
+		targetOffset: 	(26.0@10.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+[
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNotNil ]) ifTrue: [
+			morphicWorld activeHand handleEvent: anEvent
+		]
+	] in OSWindowMorphicEventHandler>>dispatchMorphicEvent:
+	Receiver: an OSWindowMorphicEventHandler
+	Arguments and temporary variables: 
+		anEvent: 	[(23@57) mouseUp 367559 nil]
+	Receiver's instance variables: 
+		morphicWorld: 	a WorldMorph(883747328) [world]
+
+
+WorldState>>runStepMethodsIn:
+	Receiver: a WorldState
+	Arguments and temporary variables: 
+		aWorld: 	a WorldMorph(883747328) [world]
+		queue: 	WaitfreeQueue with 1 items
+		nextInQueue: 	[
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNo[..]
+	Receiver's instance variables: 
+		hands: 	an Array(a HandMorph(268082944))
+		damageRecorder: 	a DamageRecorder
+		stepList: 	a Heap()
+		lastStepTime: 	29419
+		lastStepMessage: 	nil
+		alarms: 	a Heap(MorphicAlarm(#hideShow -> a RubCursor(746119680)) MorphicAla[..]
+		lastAlarmTime: 	373383
+		activeHand: 	a HandMorph(268082944)
+		currentCursor: 	((CursorWithMask
+	extent: (16@16)
+	depth: 1
+	fromArray: #(
+	[..]
+		worldRenderer: 	an OSWorldRenderer
+		realWindowExtent: 	(1470@919)
+		deferredUIMessages: 	WaitfreeQueue with 1 items
+
+
+WorldMorph>>runStepMethods
+	Receiver: a WorldMorph(883747328) [world]
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (1470@919)
+		owner: 	nil
+		submorphs: 	an Array(a MenubarMorph(630320896) a TaskbarMorph(348776192) a S[..]
+		fullBounds: 	nil
+		color: 	(Color r: 0.14858260019550343 g: 0.19648093841642228 b: 0.2199413489[..]
+		extension: 	a MorphExtension (328068608) [other:  (dragEnabled -> true) (dro[..]
+		borderWidth: 	0
+		borderColor: 	(Color r: 0.8611925708699902 g: 1.0 b: 0.7223851417399805 alph[..]
+		backgroundMorph: 	nil
+		worldState: 	a WorldState
+		griddingOn: 	nil
+		zoomFactor: 	1
+
+
+WorldState>>doOneCycleFor:
+	Receiver: a WorldState
+	Arguments and temporary variables: 
+		aWorld: 	a WorldMorph(883747328) [world]
+	Receiver's instance variables: 
+		hands: 	an Array(a HandMorph(268082944))
+		damageRecorder: 	a DamageRecorder
+		stepList: 	a Heap()
+		lastStepTime: 	29419
+		lastStepMessage: 	nil
+		alarms: 	a Heap(MorphicAlarm(#hideShow -> a RubCursor(746119680)) MorphicAla[..]
+		lastAlarmTime: 	373383
+		activeHand: 	a HandMorph(268082944)
+		currentCursor: 	((CursorWithMask
+	extent: (16@16)
+	depth: 1
+	fromArray: #(
+	[..]
+		worldRenderer: 	an OSWorldRenderer
+		realWindowExtent: 	(1470@919)
+		deferredUIMessages: 	WaitfreeQueue with 1 items
+
+
+WorldMorph>>doOneCycleNow
+	Receiver: a WorldMorph(883747328) [world]
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (1470@919)
+		owner: 	nil
+		submorphs: 	an Array(a MenubarMorph(630320896) a TaskbarMorph(348776192) a S[..]
+		fullBounds: 	nil
+		color: 	(Color r: 0.14858260019550343 g: 0.19648093841642228 b: 0.2199413489[..]
+		extension: 	a MorphExtension (328068608) [other:  (dragEnabled -> true) (dro[..]
+		borderWidth: 	0
+		borderColor: 	(Color r: 0.8611925708699902 g: 1.0 b: 0.7223851417399805 alph[..]
+		backgroundMorph: 	nil
+		worldState: 	a WorldState
+		griddingOn: 	nil
+		zoomFactor: 	1
+
+
+
+--- The full stack ---
+ZnClient(Object)>>error:
+ZnClient>>contentType:
+[
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] in [
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+FullBlockClosure(BlockClosure)>>on:do:
+[
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+FullBlockClosure(BlockClosure)>>on:do:
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		result := self interactionModel compiler
+			source: aString;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self refreshStyling ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError:
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+		aButtonClass new
+			label: specCommand name;
+			help: specCommand description;
+			in: [ :button | 
+				specCommand hasIcon
+					ifTrue: [ button icon: specCommand icon ] ];
+			action: [ specCommand execute ];
+			enabled: specCommand canBeExecuted;
+			yourself ] in SpCommand>>configureAsButtonOfClass:
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear:
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+HandMorph>>sendEvent:focus:clear:
+HandMorph>>sendMouseEvent:
+HandMorph>>handleEvent:
+[
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNotNil ]) ifTrue: [
+			morphicWorld activeHand handleEvent: anEvent
+		]
+	] in OSWindowMorphicEventHandler>>dispatchMorphicEvent:
+WorldState>>runStepMethodsIn:
+WorldMorph>>runStepMethods
+WorldState>>doOneCycleFor:
+WorldMorph>>doOneCycleNow
+ - - - - - - - - - - - - - - -
+			- - - - - - - - - - - - - - - - - -
+WorldMorph>>doOneCycle
+[
+		| extraWorldsToDraw |
+		extraWorldsToDraw := ExtraWorldListMutex critical: [
+			                     self extraWorldList ].
+		extraWorldsToDraw do: [ :world | world doOneCycle ].
+
+		(self currentWorld isNotNil and: [
+			 (extraWorldsToDraw includes: self currentWorld) not ]) ifTrue: [
+			self currentWorld doOneCycle ] ] in WorldMorph class>>doOneCycle
+FullBlockClosure(BlockClosure)>>ensure:
+WorldState class>>doDrawCycleWith:
+WorldMorph class>>doOneCycle
+MorphicRenderLoop>>doOneCycle
+MorphicRenderLoop>>doOneCycleWhile:
+AlertDialogWindow(SystemWindow)>>openModal
+DarkBlueTheme(UITheme)>>alertIn:text:title:configure:
+MorphicUIManager>>alert:title:configure:
+MorphicUIManager>>alert:title:
+MorphicUIManager>>alert:
+[ :ex | 
+    Transcript show: 'Connection failed: ', ex class name, ' - ', ex messageText; cr.
+    UIManager default alert: 'Network error: ', ex messageText ] in UndefinedObject>>DoIt
+FullBlockClosure(BlockClosure)>>cull:
+Context>>evaluateSignal:
+Context>>handleSignal:
+MessageNotUnderstood(Exception)>>signal
+ZnEntity class(Object)>>doesNotUnderstand: #text:contentType:
+[
+    Transcript show: 'Attempting connection to: ', serverUrl; cr.
+    
+    client := ZnClient new.
+    client
+        url: serverUrl;
+        timeout: 30;
+        accept: ZnMimeType applicationJson;
+        entity: (ZnEntity text: payload contentType: ZnMimeType applicationJson);
+        post.
+    
+    Transcript show: 'Connection successful!'; cr.
+    resp := client response.
+    status := resp code.
+    respBody := resp hasEntity 
+        ifTrue: [ resp contents ] 
+        ifFalse: [ '' ].
+    
+    Transcript
+        cr; show: '--- HTTP Response ---'; cr;
+        show: 'Status: ', status asString; cr;
+        show: 'Body:   ', respBody; cr;
+        show: '-----------------------'; cr.
+    
+    UIManager default inform:
+        'Sent to: ', serverUrl, String cr,
+        'Status: ', status asString, String cr,
+        'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+
+] in UndefinedObject>>DoIt
+FullBlockClosure(BlockClosure)>>on:do:
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		result := self interactionModel compiler
+			source: aString;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self refreshStyling ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError:
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+		aButtonClass new
+			label: specCommand name;
+			help: specCommand description;
+			in: [ :button | 
+				specCommand hasIcon
+					ifTrue: [ button icon: specCommand icon ] ];
+			action: [ specCommand execute ];
+			enabled: specCommand canBeExecuted;
+			yourself ] in SpCommand>>configureAsButtonOfClass:
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear:
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+HandMorph>>sendEvent:focus:clear:
+HandMorph>>sendMouseEvent:
+HandMorph>>handleEvent:
+[
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNotNil ]) ifTrue: [
+			morphicWorld activeHand handleEvent: anEvent
+		]
+	] in OSWindowMorphicEventHandler>>dispatchMorphicEvent:
+WorldState>>runStepMethodsIn:
+WorldMorph>>runStepMethods
+WorldState>>doOneCycleFor:
+WorldMorph>>doOneCycleNow
+WorldMorph>>doOneCycle
+[
+		| extraWorldsToDraw |
+		extraWorldsToDraw := ExtraWorldListMutex critical: [
+			                     self extraWorldList ].
+		extraWorldsToDraw do: [ :world | world doOneCycle ].
+
+		(self currentWorld isNotNil and: [
+			 (extraWorldsToDraw includes: self currentWorld) not ]) ifTrue: [
+			self currentWorld doOneCycle ] ] in WorldMorph class>>doOneCycle
+FullBlockClosure(BlockClosure)>>ensure:
+WorldState class>>doDrawCycleWith:
+WorldMorph class>>doOneCycle
+MorphicRenderLoop>>doOneCycle
+MorphicRenderLoop>>doOneCycleWhile:
+[ MorphicRenderLoop new doOneCycleWhile: [ true ] ] in MorphicUIManager>>spawnNewProcess
+[self value.
+			"IMPORTANT: Do not step over next line of code. See method comments for details"
+			Processor terminateRealActive] in FullBlockClosure(BlockClosure)>>newProcess
+-------------------------------------------------------------------------------
+
+THERE_BE_DRAGONS_HERE
+There is no request entity yet, cannot set its content-type
+26 September 2025 5:25:12.328262 pm
+
+VM: Mac OS - arm64 - 1000 - CoInterpreter VMMaker-tonel.1 uuid: 796cf0ae-9df8-0d00-bd87-dbbf06d86bc4 Aug 13 2025
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 796cf0ae-9df8-0d00-bd87-dbbf06d86bc4 Aug 13 2025
+v10.3.8+0.a7c8a0bba - Commit: a7c8a0bba - Date: 2025-08-12 19:03:31 +0200
+
+Image: Pharo13.1.0SNAPSHOT [Build information: Pharo-13.1.0+SNAPSHOT.build.699.sha.be5cc741badcf8f5202497545e7d75c65116d5d0 (64 Bit)]
+
+ZnClient(Object)>>error:
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		aString: 	'There is no request entity yet, cannot set its content-type'
+	Receiver's instance variables: 
+		request: 	a ZnRequest()
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	nil
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+ZnClient>>contentType:
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		mimeType: 	application/json
+	Receiver's instance variables: 
+		request: 	a ZnRequest()
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	nil
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+[
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] in [
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+	Receiver: nil
+	Arguments and temporary variables: 
+		sql: 	'Select * from khan;'
+		body: 	'Select * from khan'
+		valid: 	true
+		endsWithSemi: 	true
+		rest: 	'* from khan'
+		lc: 	'select * from khan'
+		fromPos: 	9
+		afterFrom: 	'khan'
+		jsonEscaped: 	'Select * from khan'
+		payload: 	'{"sql":"Select * from khan"}'
+		serverUrl: 	'http://localhost:8080/api/sql'
+		client: 	a ZnClient
+		resp: 	nil
+		status: 	nil
+		respBody: 	nil
+	Receiver's instance variables: 
+nil
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+         [..]
+	Arguments and temporary variables: 
+		exception: 	ZnHttpUnsuccessful
+		handlerAction: 	[ :ex | UIManager default alert: 'HTTP error: ', ex response[..]
+	Receiver's instance variables: 
+		outerContext: 	[
+    [
+        client := ZnClient new.
+        client
+      [..]
+		compiledBlock: 	a CompiledBlock: [
+        client := ZnClient new.
+        c[..]
+		numArgs: 	0
+		receiver: 	nil
+
+
+[
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+	Receiver: nil
+	Arguments and temporary variables: 
+		sql: 	'Select * from khan;'
+		body: 	'Select * from khan'
+		valid: 	true
+		endsWithSemi: 	true
+		rest: 	'* from khan'
+		lc: 	'select * from khan'
+		fromPos: 	9
+		afterFrom: 	'khan'
+		jsonEscaped: 	'Select * from khan'
+		payload: 	'{"sql":"Select * from khan"}'
+		serverUrl: 	'http://localhost:8080/api/sql'
+		client: 	a ZnClient
+		resp: 	nil
+		status: 	nil
+		respBody: 	nil
+	Receiver's instance variables: 
+nil
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+   [..]
+	Arguments and temporary variables: 
+		exception: 	NetworkError
+		handlerAction: 	[ :ex | UIManager default alert: 'Network error: ', ex messa[..]
+	Receiver's instance variables: 
+		outerContext: 	UndefinedObject>>DoIt
+		compiledBlock: 	a CompiledBlock: [
+    [
+        client := ZnClient new.
+   [..]
+		numArgs: 	0
+		receiver: 	nil
+
+
+UndefinedObject>>DoIt
+	Receiver: nil
+	Arguments and temporary variables: 
+		client: 	a ZnClient
+		resp: 	nil
+		status: 	nil
+		respBody: 	nil
+		sql: 	'Select * from khan;'
+		body: 	'Select * from khan'
+		valid: 	true
+		endsWithSemi: 	true
+		rest: 	'* from khan'
+		lc: 	'select * from khan'
+		fromPos: 	9
+		afterFrom: 	'khan'
+		jsonEscaped: 	'Select * from khan'
+		payload: 	'{"sql":"Select * from khan"}'
+		serverUrl: 	'http://localhost:8080/api/sql'
+	Receiver's instance variables: 
+nil
+
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+	Receiver: an OCReceiverDoItSemanticScope
+	Arguments and temporary variables: 
+		doItMethod: 	UndefinedObject>>#DoIt
+	Receiver's instance variables: 
+		outerScope: 	nil
+		targetReceiver: 	nil
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+		doItMethod: 	UndefinedObject>>#DoIt
+	Receiver's instance variables: 
+		ast: 	DoIt
+
+	| sql "Part 1 — SELECT-only validator (build + send JSON payloa[..]
+		source: 	'"Part 1 — SELECT-only validator (build + send JSON payload)"
+| sql[..]
+		compilationContext: 	an OCCompilationContext
+		compilationContextClass: 	nil
+		permitFaulty: 	false
+		permitUndeclared: 	false
+		failBlock: 	[ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncem[..]
+		logged: 	nil
+		changeStamp: 	nil
+		protocol: 	nil
+		requestor: 	a StPlaygroundInteractionModel
+		priorMethod: 	nil
+
+
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		result := self interactionModel compiler
+			source: aString;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self refreshStyling ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError:
+	Receiver: a SpCodePresenter
+	Arguments and temporary variables: 
+		aString: 	'"Part 1 — SELECT-only validator (build + send JSON payload)"
+| sq[..]
+		compileErrorBlock: 	[ ^ self ]
+		errorBlock: 	[ :e | e pass ]
+		result: 	nil
+		oldBindings: 	a Dictionary()
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicCodeAdapter)
+		announcer: 	an Announcer
+		owner: 	a StPlaygroundPagePresenter
+		adapter: 	a SpMorphicCodeAdapter
+		needRebuild: 	true
+		eventHandler: 	a SpEventHandler
+		properties: 	a SmallDictionary()
+		application: 	nil
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Code' ]
+		additionalSubpresentersMap: 	nil
+		layout: 	an ObservableValueHolder[ a SpAbstractWidgetLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ a SpCommandGroup ]
+		internalActionGroup: 	a SpActionGroup
+		borderWidth: 	an ObservableValueHolder[ nil ]
+		borderColor: 	an ObservableValueHolder[ nil ]
+		dragEnabled: 	an ObservableValueHolder[ false ]
+		dropEnabled: 	an ObservableValueHolder[ false ]
+		color: 	an ObservableValueHolder[ nil ]
+		help: 	an ObservableValueHolder[ nil ]
+		enabled: 	an ObservableValueHolder[ true ]
+		wantsDrop: 	an ObservableValueHolder[ [ :transfer | self dropEnabled ] ]
+		acceptDrop: 	an ObservableValueHolder[ [ :transfer | ] ]
+		deferredActions: 	nil
+		selection: 	an ObservableValueHolder[ (1 to: 2859) ]
+		text: 	an ObservableValueHolder[ '"Part 1 — SELECT-only validator (build + s[..]
+		actionToPerform: 	an ObservableValueHolder[ [ :txt |  ] ]
+		readSelection: 	an ObservableValueHolder[ [ selection ] ]
+		placeholder: 	an ObservableValueHolder[ '' ]
+		editable: 	an ObservableValueHolder[ true ]
+		contextMenu: 	an ObservableValueHolder[ nil ]
+		scrollValue: 	an ObservableValueHolder[ (0@1.0) ]
+		editionContextMenu: 	an ObservableValueHolder[ true ]
+		wrapWord: 	an ObservableValueHolder[ true ]
+		undoRedoHistory: 	true
+		wrapScrollBars: 	true
+		propagateNaturalHeight: 	false
+		propagateNaturalWidth: 	false
+		scrollBarStyles: 	#()
+		syntaxHighlight: 	an ObservableValueHolder[ true ]
+		smartCharacters: 	an ObservableValueHolder[ true ]
+		lineNumbers: 	an ObservableValueHolder[ true ]
+		interactionModel: 	an ObservableValueHolder[ a StPlaygroundInteractionModel ]
+		overrideContextMenu: 	true
+		submitBlock: 	nil
+		resetBlock: 	nil
+		environment: 	nil
+		systemNavigation: 	nil
+		syntaxHighlightTheme: 	an ObservableValueHolder[ nil ]
+		styleScheme: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+[..]
+	Arguments and temporary variables: 
+		exception: 	Error
+		handlerAction: 	[ :e |
+		self announcer announce: (SpCodeEvaluationFailedAnn[..]
+	Receiver's instance variables: 
+		outerContext: 	SpCodePresenter>>evaluate:onCompileError:onError:
+		compiledBlock: 	a CompiledBlock: [
+		self announcer announce: (SpCodeWillBeE[..]
+		numArgs: 	0
+		receiver: 	a SpCodePresenter
+
+
+SpCodePresenter>>evaluate:onCompileError:onError:
+	Receiver: a SpCodePresenter
+	Arguments and temporary variables: 
+		result: 	nil
+		oldBindings: 	a Dictionary()
+		aString: 	'"Part 1 — SELECT-only validator (build + send JSON payload)"
+| sq[..]
+		compileErrorBlock: 	[ ^ self ]
+		errorBlock: 	[ :e | e pass ]
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicCodeAdapter)
+		announcer: 	an Announcer
+		owner: 	a StPlaygroundPagePresenter
+		adapter: 	a SpMorphicCodeAdapter
+		needRebuild: 	true
+		eventHandler: 	a SpEventHandler
+		properties: 	a SmallDictionary()
+		application: 	nil
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Code' ]
+		additionalSubpresentersMap: 	nil
+		layout: 	an ObservableValueHolder[ a SpAbstractWidgetLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ a SpCommandGroup ]
+		internalActionGroup: 	a SpActionGroup
+		borderWidth: 	an ObservableValueHolder[ nil ]
+		borderColor: 	an ObservableValueHolder[ nil ]
+		dragEnabled: 	an ObservableValueHolder[ false ]
+		dropEnabled: 	an ObservableValueHolder[ false ]
+		color: 	an ObservableValueHolder[ nil ]
+		help: 	an ObservableValueHolder[ nil ]
+		enabled: 	an ObservableValueHolder[ true ]
+		wantsDrop: 	an ObservableValueHolder[ [ :transfer | self dropEnabled ] ]
+		acceptDrop: 	an ObservableValueHolder[ [ :transfer | ] ]
+		deferredActions: 	nil
+		selection: 	an ObservableValueHolder[ (1 to: 2859) ]
+		text: 	an ObservableValueHolder[ '"Part 1 — SELECT-only validator (build + s[..]
+		actionToPerform: 	an ObservableValueHolder[ [ :txt |  ] ]
+		readSelection: 	an ObservableValueHolder[ [ selection ] ]
+		placeholder: 	an ObservableValueHolder[ '' ]
+		editable: 	an ObservableValueHolder[ true ]
+		contextMenu: 	an ObservableValueHolder[ nil ]
+		scrollValue: 	an ObservableValueHolder[ (0@1.0) ]
+		editionContextMenu: 	an ObservableValueHolder[ true ]
+		wrapWord: 	an ObservableValueHolder[ true ]
+		undoRedoHistory: 	true
+		wrapScrollBars: 	true
+		propagateNaturalHeight: 	false
+		propagateNaturalWidth: 	false
+		scrollBarStyles: 	#()
+		syntaxHighlight: 	an ObservableValueHolder[ true ]
+		smartCharacters: 	an ObservableValueHolder[ true ]
+		lineNumbers: 	an ObservableValueHolder[ true ]
+		interactionModel: 	an ObservableValueHolder[ a StPlaygroundInteractionModel ]
+		overrideContextMenu: 	true
+		submitBlock: 	nil
+		resetBlock: 	nil
+		environment: 	nil
+		systemNavigation: 	nil
+		syntaxHighlightTheme: 	an ObservableValueHolder[ nil ]
+		styleScheme: 	nil
+
+
+StPlaygroundPagePresenter>>doEvaluateAndGo
+	Receiver: a StPlaygroundPagePresenter
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicBoxAdapter)
+		announcer: 	an Announcer
+		owner: 	a SpMillerColumnPresenter
+		adapter: 	a SpMorphicBoxAdapter
+		needRebuild: 	true
+		eventHandler: 	nil
+		properties: 	a SmallDictionary()
+		application: 	a StPharoApplication
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Playground' ]
+		additionalSubpresentersMap: 	a Dictionary()
+		layout: 	an ObservableValueHolder[ a SpBoxLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ nil ]
+		internalActionGroup: 	nil
+		text: 	a SpCodePresenter
+		toolbar: 	a SpToolbarPresenter
+		statusbar: 	a SpPresenter
+		lineLabel: 	a SpLabelPresenter
+		toggleLineNumberButton: 	a SpToggleButtonPresenter
+		page: 	a StPlaygroundPage
+		activationBlock: 	[ :selection |
+		self changeSelection: selection from: new[..]
+		loading: 	false
+
+
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+	Receiver: a StPlaygroundPagePresenter
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicBoxAdapter)
+		announcer: 	an Announcer
+		owner: 	a SpMillerColumnPresenter
+		adapter: 	a SpMorphicBoxAdapter
+		needRebuild: 	true
+		eventHandler: 	nil
+		properties: 	a SmallDictionary()
+		application: 	a StPharoApplication
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Playground' ]
+		additionalSubpresentersMap: 	a Dictionary()
+		layout: 	an ObservableValueHolder[ a SpBoxLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ nil ]
+		internalActionGroup: 	nil
+		text: 	a SpCodePresenter
+		toolbar: 	a SpToolbarPresenter
+		statusbar: 	a SpPresenter
+		lineLabel: 	a SpLabelPresenter
+		toggleLineNumberButton: 	a SpToggleButtonPresenter
+		page: 	a StPlaygroundPage
+		activationBlock: 	[ :selection |
+		self changeSelection: selection from: new[..]
+		loading: 	false
+
+
+StPlaygroundDoItCommand>>execute
+	Receiver: a StPlaygroundDoItCommand
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		context: 	a StPlaygroundPagePresenter
+		basicName: 	'Do it all'
+		basicDescription: 	'Do it all and inspect.'
+
+
+SpCommand(CmCommandDecorator)>>execute
+	Receiver: a SpCommand(Do it all)
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		decoratedCommand: 	a StPlaygroundDoItCommand
+		iconProvider: 	a StPharoApplication
+		iconName: 	#go
+		shortcutKey: 	nil
+		displayStrategy: 	a CmUIDisableWhenCantBeRun
+		positionStrategy: 	a CmUILeftPositionStrategy
+		buildPresenterBlock: 	[ :specCommand | 
+		aButtonClass new
+			label: specCom[..]
+		presenter: 	a SpToolbarButtonPresenter
+
+
+[ specCommand execute ] in [ :specCommand | 
+		aButtonClass new
+			label: specCommand name;
+			help: specCommand description;
+			in: [ :button | 
+				specCommand hasIcon
+					ifTrue: [ button icon: specCommand icon ] ];
+			action: [ specCommand execute ];
+			enabled: specCommand canBeExecuted;
+			yourself ] in SpCommand>>configureAsButtonOfClass:
+	Receiver: a SpCommand(Do it all)
+	Arguments and temporary variables: 
+		aButtonClass: 	nil
+		specCommand: 	a SpCommand(Do it all)
+	Receiver's instance variables: 
+		decoratedCommand: 	a StPlaygroundDoItCommand
+		iconProvider: 	a StPharoApplication
+		iconName: 	#go
+		shortcutKey: 	nil
+		displayStrategy: 	a CmUIDisableWhenCantBeRun
+		positionStrategy: 	a CmUILeftPositionStrategy
+		buildPresenterBlock: 	[ :specCommand | 
+		aButtonClass new
+			label: specCom[..]
+		presenter: 	a SpToolbarButtonPresenter
+
+
+FullBlockClosure(BlockClosure)>>cull:
+	Receiver: [ specCommand execute ]
+	Arguments and temporary variables: 
+		anArg: 	a SpToolbarButtonPresenter
+	Receiver's instance variables: 
+		outerContext: 	[ :specCommand | 
+		aButtonClass new
+			label: specCommand na[..]
+		compiledBlock: 	a CompiledBlock: [ specCommand execute ]
+		numArgs: 	0
+		receiver: 	a SpCommand(Do it all)
+
+
+SpMorphicToolbarButtonAdapter>>execute
+	Receiver: a SpMorphicToolbarButtonAdapter
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpToolbarButtonMorph(90879488))
+		announcer: 	nil
+		model: 	a SpToolbarButtonPresenter
+		widget: 	a SpToolbarButtonMorph(90879488)
+		selector: 	nil
+		owner: 	a SpToolbarButtonPresenter
+		unsubscribed: 	false
+
+
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+	Receiver: a SpToolbarButtonMorph(90879488)
+	Arguments and temporary variables: 
+		event: 	[(19@20) mouseUp 272440 nil]
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(551756544)
+		submorphs: 	an Array(an AlignmentMorph(449830656))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (297827840) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(819436032)'Do it all'
+		iconMorph: 	an ImageMorph(650648320)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+	Receiver: a SpToolbarButtonMorph(90879488)
+	Arguments and temporary variables: 
+		evt: 	[(19@20) mouseUp 272440 nil]
+		all: 	an Array(a SpToolbarButtonMorph(90879488) a SpToolbarButtonMorph(83873[..]
+		m: 	a SpToolbarButtonMorph(90879488)
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(551756544)
+		submorphs: 	an Array(an AlignmentMorph(449830656))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (297827840) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(819436032)'Do it all'
+		iconMorph: 	an ImageMorph(650648320)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+Array(SequenceableCollection)>>do:
+	Receiver: an Array(a SpToolbarButtonMorph(90879488) a SpToolbarButtonMorph(838731264) a SpToolba[..]
+	Arguments and temporary variables: 
+		aBlock: 	[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTru[..]
+		index: 	1
+	Receiver's instance variables: 
+an Array(a SpToolbarButtonMorph(90879488) a SpToolbarButtonMorph(838731264) a SpToolba[..]
+
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+	Receiver: a SpToolbarButtonMorph(90879488)
+	Arguments and temporary variables: 
+		evt: 	[(19@20) mouseUp 272440 nil]
+		all: 	an Array(a SpToolbarButtonMorph(90879488) a SpToolbarButtonMorph(83873[..]
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(551756544)
+		submorphs: 	an Array(an AlignmentMorph(449830656))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (297827840) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(819436032)'Do it all'
+		iconMorph: 	an ImageMorph(650648320)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+	Receiver: a SpToolbarButtonMorph(90879488)
+	Arguments and temporary variables: 
+		anEvent: 	[(19@20) mouseUp 272440 nil]
+		result: 	nil
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(551756544)
+		submorphs: 	an Array(an AlignmentMorph(449830656))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (297827840) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(819436032)'Do it all'
+		iconMorph: 	an ImageMorph(650648320)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+MouseButtonEvent>>sentTo:
+	Receiver: [(19@20) mouseUp 272440 nil]
+	Arguments and temporary variables: 
+		anObject: 	a SpToolbarButtonMorph(90879488)
+	Receiver's instance variables: 
+		timeStamp: 	272440
+		source: 	a HandMorph(268082944)
+		windowIndex: 	nil
+		type: 	#mouseUp
+		buttons: 	0
+		position: 	(19@20)
+		handler: 	nil
+		wasHandled: 	true
+		whichButton: 	4
+
+
+SpToolbarButtonMorph(Morph)>>handleEvent:
+	Receiver: a SpToolbarButtonMorph(90879488)
+	Arguments and temporary variables: 
+		anEvent: 	[(19@20) mouseUp 272440 nil]
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(551756544)
+		submorphs: 	an Array(an AlignmentMorph(449830656))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (297827840) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(819436032)'Do it all'
+		iconMorph: 	an ImageMorph(650648320)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+	Receiver: a SpToolbarButtonMorph(90879488)
+	Arguments and temporary variables: 
+		anEvent: 	[(19@20) mouseUp 272440 nil]
+	Receiver's instance variables: 
+		bounds: 	(0.0@5.0) corner: (45.0@39.0)
+		owner: 	a Morph(551756544)
+		submorphs: 	an Array(an AlignmentMorph(449830656))
+		fullBounds: 	(0@5) corner: (45@39)
+		color: 	Color transparent
+		extension: 	a MorphExtension (297827840) [balloonText]  [other:  (presenter [..]
+		borderWidth: 	0
+		borderColor: 	#simple
+		model: 	a SpMorphicToolbarButtonAdapter
+		label: 	'Do it all'
+		icon: 	Form(13x13x32)
+		getIconSelector: 	#icon
+		getStateSelector: 	#state
+		actionSelector: 	#execute
+		font: 	a LogicalFont
+ familyName: 'Source Sans Pro'
+ emphasis: nil
+ pointSiz[..]
+		getLabelSelector: 	#label
+		getMenuSelector: 	nil
+		shortcutCharacter: 	nil
+		askBeforeChanging: 	false
+		triggerOnMouseDown: 	false
+		offColor: 	nil
+		onColor: 	nil
+		feedbackColor: 	nil
+		showSelectionFeedback: 	false
+		allButtons: 	nil
+		arguments: 	#()
+		argumentsProvider: 	nil
+		argumentsSelector: 	nil
+		enabled: 	true
+		actionBlock: 	nil
+		getColorSelector: 	nil
+		getEnabledSelector: 	nil
+		getFontSelector: 	nil
+		labelMorph: 	a LabelMorph(819436032)'Do it all'
+		iconMorph: 	an ImageMorph(650648320)
+		iconPosition: 	#top
+		lastState: 	false
+		badgeFont: 	nil
+		badgeSelector: 	#badge
+
+
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		anEvent: 	[(24@66) mouseUp 272440 nil]
+		focusHolder: 	a SpToolbarButtonMorph(90879488)
+		aBlock: 	[self mouseFocus: nil]
+		w: 	a WorldMorph(883747328) [world]
+		transformedEvent: 	[(19@20) mouseUp 272440 nil]
+		result: 	nil
+	Receiver's instance variables: 
+		bounds: 	(531@360) corner: (547@376)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a SpToolbarButtonMorph(90879488)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(531@360) mouseOver 273017 nil]
+		targetOffset: 	(19.0@15.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+		result := focusHolder handleFocusEvent: transformedEvent.
+	]
+	Arguments and temporary variables: 
+		exception: 	Error
+		handlerAction: 	[ :ex |
+			ActiveWorld := priorWorld.
+			ex pass ]
+	Receiver's instance variables: 
+		outerContext: 	HandMorph>>sendFocusEvent:to:clear:
+		compiledBlock: 	a CompiledBlock: [
+		result := focusHolder handleFocusEvent:[..]
+		numArgs: 	0
+		receiver: 	a HandMorph(268082944)
+
+
+WorldMorph>>becomeActiveDuring:
+	Receiver: a WorldMorph(883747328) [world]
+	Arguments and temporary variables: 
+		aBlock: 	[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	]
+		priorWorld: 	a WorldMorph(883747328) [world]
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (1248@832)
+		owner: 	nil
+		submorphs: 	an Array(a MenubarMorph(407312896) a TaskbarMorph(348776192) a S[..]
+		fullBounds: 	nil
+		color: 	(Color r: 0.14858260019550343 g: 0.19648093841642228 b: 0.2199413489[..]
+		extension: 	a MorphExtension (328068608) [other:  (dragEnabled -> true) (dro[..]
+		borderWidth: 	0
+		borderColor: 	(Color r: 0.8611925708699902 g: 1.0 b: 0.7223851417399805 alph[..]
+		backgroundMorph: 	nil
+		worldState: 	a WorldState
+		griddingOn: 	nil
+		zoomFactor: 	1
+
+
+HandMorph>>sendFocusEvent:to:clear:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		result: 	nil
+		anEvent: 	[(24@66) mouseUp 272440 nil]
+		focusHolder: 	a SpToolbarButtonMorph(90879488)
+		aBlock: 	[self mouseFocus: nil]
+		w: 	a WorldMorph(883747328) [world]
+		transformedEvent: 	[(19@20) mouseUp 272440 nil]
+	Receiver's instance variables: 
+		bounds: 	(531@360) corner: (547@376)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a SpToolbarButtonMorph(90879488)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(531@360) mouseOver 273017 nil]
+		targetOffset: 	(19.0@15.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+HandMorph>>sendEvent:focus:clear:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		anEvent: 	[(24@66) mouseUp 272440 nil]
+		focusHolder: 	a SpToolbarButtonMorph(90879488)
+		aBlock: 	[self mouseFocus: nil]
+		result: 	nil
+	Receiver's instance variables: 
+		bounds: 	(531@360) corner: (547@376)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a SpToolbarButtonMorph(90879488)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(531@360) mouseOver 273017 nil]
+		targetOffset: 	(19.0@15.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+HandMorph>>sendMouseEvent:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		anEvent: 	[(24@66) mouseUp 272440 nil]
+	Receiver's instance variables: 
+		bounds: 	(531@360) corner: (547@376)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a SpToolbarButtonMorph(90879488)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(531@360) mouseOver 273017 nil]
+		targetOffset: 	(19.0@15.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+HandMorph>>handleEvent:
+	Receiver: a HandMorph(268082944)
+	Arguments and temporary variables: 
+		anEvent: 	[(24@66) mouseUp 272440 nil]
+		evt: 	[(24@66) mouseUp 272440 nil]
+	Receiver's instance variables: 
+		bounds: 	(531@360) corner: (547@376)
+		owner: 	a WorldMorph(883747328) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (421793536)
+		mouseFocus: 	nil
+		keyboardFocus: 	a SpToolbarButtonMorph(90879488)
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		mouseClickState: 	nil
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(531@360) mouseOver 273017 nil]
+		targetOffset: 	(19.0@15.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 0 0 0 0 0 nil nil)
+		captureBlock: 	nil
+		recentModifiers: 	0
+		pendingEventQueue: 	WaitfreeQueue with 0 items
+		supressNextKeyPress: 	false
+
+
+[
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNotNil ]) ifTrue: [
+			morphicWorld activeHand handleEvent: anEvent
+		]
+	] in OSWindowMorphicEventHandler>>dispatchMorphicEvent:
+	Receiver: an OSWindowMorphicEventHandler
+	Arguments and temporary variables: 
+		anEvent: 	[(24@66) mouseUp 272440 nil]
+	Receiver's instance variables: 
+		morphicWorld: 	a WorldMorph(883747328) [world]
+
+
+WorldState>>runStepMethodsIn:
+	Receiver: a WorldState
+	Arguments and temporary variables: 
+		aWorld: 	a WorldMorph(883747328) [world]
+		queue: 	WaitfreeQueue with 1 items
+		nextInQueue: 	[
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNo[..]
+	Receiver's instance variables: 
+		hands: 	an Array(a HandMorph(268082944))
+		damageRecorder: 	a DamageRecorder
+		stepList: 	a Heap()
+		lastStepTime: 	245150
+		lastStepMessage: 	nil
+		alarms: 	a Heap(MorphicAlarm(#hideShow -> a RubCursor(101251840)))
+		lastAlarmTime: 	277743
+		activeHand: 	a HandMorph(268082944)
+		currentCursor: 	((CursorWithMask
+	extent: (16@16)
+	depth: 1
+	fromArray: #(
+	[..]
+		worldRenderer: 	an OSWorldRenderer
+		realWindowExtent: 	(1248@832)
+		deferredUIMessages: 	WaitfreeQueue with 1 items
+
+
+WorldMorph>>runStepMethods
+	Receiver: a WorldMorph(883747328) [world]
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (1248@832)
+		owner: 	nil
+		submorphs: 	an Array(a MenubarMorph(407312896) a TaskbarMorph(348776192) a S[..]
+		fullBounds: 	nil
+		color: 	(Color r: 0.14858260019550343 g: 0.19648093841642228 b: 0.2199413489[..]
+		extension: 	a MorphExtension (328068608) [other:  (dragEnabled -> true) (dro[..]
+		borderWidth: 	0
+		borderColor: 	(Color r: 0.8611925708699902 g: 1.0 b: 0.7223851417399805 alph[..]
+		backgroundMorph: 	nil
+		worldState: 	a WorldState
+		griddingOn: 	nil
+		zoomFactor: 	1
+
+
+WorldState>>doOneCycleFor:
+	Receiver: a WorldState
+	Arguments and temporary variables: 
+		aWorld: 	a WorldMorph(883747328) [world]
+	Receiver's instance variables: 
+		hands: 	an Array(a HandMorph(268082944))
+		damageRecorder: 	a DamageRecorder
+		stepList: 	a Heap()
+		lastStepTime: 	245150
+		lastStepMessage: 	nil
+		alarms: 	a Heap(MorphicAlarm(#hideShow -> a RubCursor(101251840)))
+		lastAlarmTime: 	277743
+		activeHand: 	a HandMorph(268082944)
+		currentCursor: 	((CursorWithMask
+	extent: (16@16)
+	depth: 1
+	fromArray: #(
+	[..]
+		worldRenderer: 	an OSWorldRenderer
+		realWindowExtent: 	(1248@832)
+		deferredUIMessages: 	WaitfreeQueue with 1 items
+
+
+WorldMorph>>doOneCycleNow
+	Receiver: a WorldMorph(883747328) [world]
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (1248@832)
+		owner: 	nil
+		submorphs: 	an Array(a MenubarMorph(407312896) a TaskbarMorph(348776192) a S[..]
+		fullBounds: 	nil
+		color: 	(Color r: 0.14858260019550343 g: 0.19648093841642228 b: 0.2199413489[..]
+		extension: 	a MorphExtension (328068608) [other:  (dragEnabled -> true) (dro[..]
+		borderWidth: 	0
+		borderColor: 	(Color r: 0.8611925708699902 g: 1.0 b: 0.7223851417399805 alph[..]
+		backgroundMorph: 	nil
+		worldState: 	a WorldState
+		griddingOn: 	nil
+		zoomFactor: 	1
+
+
+
+--- The full stack ---
+ZnClient(Object)>>error:
+ZnClient>>contentType:
+[
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] in [
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+FullBlockClosure(BlockClosure)>>on:do:
+[
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+            contents: payload;
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+FullBlockClosure(BlockClosure)>>on:do:
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		result := self interactionModel compiler
+			source: aString;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self refreshStyling ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError:
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+[ specCommand execute ] in [ :specCommand | 
+		aButtonClass new
+			label: specCommand name;
+			help: specCommand description;
+			in: [ :button | 
+				specCommand hasIcon
+					ifTrue: [ button icon: specCommand icon ] ];
+			action: [ specCommand execute ];
+			enabled: specCommand canBeExecuted;
+			yourself ] in SpCommand>>configureAsButtonOfClass:
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear:
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+HandMorph>>sendEvent:focus:clear:
+HandMorph>>sendMouseEvent:
+HandMorph>>handleEvent:
+[
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNotNil ]) ifTrue: [
+			morphicWorld activeHand handleEvent: anEvent
+		]
+	] in OSWindowMorphicEventHandler>>dispatchMorphicEvent:
+WorldState>>runStepMethodsIn:
+WorldMorph>>runStepMethods
+WorldState>>doOneCycleFor:
+WorldMorph>>doOneCycleNow
+ - - - - - - - - - - - - - - -
+			- - - - - - - - - - - - - - - - - -
+WorldMorph>>doOneCycle
+[
+		| extraWorldsToDraw |
+		extraWorldsToDraw := ExtraWorldListMutex critical: [
+			                     self extraWorldList ].
+		extraWorldsToDraw do: [ :world | world doOneCycle ].
+
+		(self currentWorld isNotNil and: [
+			 (extraWorldsToDraw includes: self currentWorld) not ]) ifTrue: [
+			self currentWorld doOneCycle ] ] in WorldMorph class>>doOneCycle
+FullBlockClosure(BlockClosure)>>ensure:
+WorldState class>>doDrawCycleWith:
+WorldMorph class>>doOneCycle
+MorphicRenderLoop>>doOneCycle
+MorphicRenderLoop>>doOneCycleWhile:
+[ MorphicRenderLoop new doOneCycleWhile: [ true ] ] in MorphicUIManager>>spawnNewProcess
+[self value.
+			"IMPORTANT: Do not step over next line of code. See method comments for details"
+			Processor terminateRealActive] in FullBlockClosure(BlockClosure)>>newProcess
+-------------------------------------------------------------------------------
+
+THERE_BE_DRAGONS_HERE
+Instances of UndefinedObject are not indexable
+27 September 2025 12:37:39.452772 am
+
+VM: Mac OS - arm64 - 1000 - CoInterpreter VMMaker-tonel.1 uuid: 796cf0ae-9df8-0d00-bd87-dbbf06d86bc4 Aug 13 2025
+StackToRegisterMappingCogit VMMaker-tonel.1 uuid: 796cf0ae-9df8-0d00-bd87-dbbf06d86bc4 Aug 13 2025
+v10.3.8+0.a7c8a0bba - Commit: a7c8a0bba - Date: 2025-08-12 19:03:31 +0200
+
+Image: Pharo13.1.0SNAPSHOT [Build information: Pharo-13.1.0+SNAPSHOT.build.699.sha.be5cc741badcf8f5202497545e7d75c65116d5d0 (64 Bit)]
+
+UndefinedObject(Object)>>error:
+	Receiver: nil
+	Arguments and temporary variables: 
+		aString: 	'Instances of UndefinedObject are not indexable'
+	Receiver's instance variables: 
+nil
+
+UndefinedObject(Object)>>errorNotIndexable
+	Receiver: nil
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+nil
+
+UndefinedObject(Object)>>size
+	Receiver: nil
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+nil
+
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+	Receiver: 'Connecting to '
+	Arguments and temporary variables: 
+		start: 	15
+		stop: 	14
+		replacementCollection: 	nil
+		newSequenceableCollection: 	nil
+		newSize: 	nil
+		endReplacement: 	nil
+	Receiver's instance variables: 
+'Connecting to '
+
+ByteString(SequenceableCollection)>>,
+	Receiver: 'Connecting to '
+	Arguments and temporary variables: 
+		otherCollection: 	nil
+	Receiver's instance variables: 
+'Connecting to '
+
+ZnClient>>newConnectionTo:
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		url: 	http://:80/
+		initialMilliseconds: 	nil
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+ZnClient>>getConnectionAndExecute
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+ZnClient>>executeWithRedirectsRemaining:trail:
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		redirectCount: 	5
+		collectionOfUrls: 	an OrderedCollection()
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+[ self 
+			executeWithRedirectsRemaining: self maxNumberOfRedirects
+			trail: OrderedCollection new ] in ZnClient>>executeWithRetriesRemaining:
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		retryCount: 	0
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ self 
+			executeWithRedirectsRemaining: self maxNumberOfRedirects
+			trail: OrderedC[..]
+	Arguments and temporary variables: 
+		exception: 	an ExceptionSet
+		handlerAction: 	[ :exception |
+			retryCount > 0
+				ifTrue: [
+					self
+			[..]
+	Receiver's instance variables: 
+		outerContext: 	ZnClient>>executeWithRetriesRemaining:
+		compiledBlock: 	a CompiledBlock: [ self 
+			executeWithRedirectsRemaining: s[..]
+		numArgs: 	0
+		receiver: 	a ZnClient
+
+
+ZnClient>>executeWithRetriesRemaining:
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		retryCount: 	0
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+[ self executeWithRetriesRemaining: self numberOfRetries ] in ZnClient>>executeHandlingErrors
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [ self executeWithRetriesRemaining: self numberOfRetries ]
+	Arguments and temporary variables: 
+		exception: 	Error
+		handlerAction: 	[ :exception | exception pass ]
+	Receiver's instance variables: 
+		outerContext: 	ZnClient>>executeHandlingErrors
+		compiledBlock: 	a CompiledBlock: [ self executeWithRetriesRemaining: self nu[..]
+		numArgs: 	0
+		receiver: 	a ZnClient
+
+
+ZnClient>>executeHandlingErrors
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+[
+		| result |
+		self prepareRequest.
+		result := self executeHandlingErrors.
+		self prepareNextRequest.
+		result ] in ZnClient>>execute
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		result: 	nil
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+[ activeProcess
+			psValueAt: index
+			put: anObject.
+		aBlock value ] in ZnCurrentOptions(DynamicVariable)>>value:during:
+	Receiver: a ZnCurrentOptions
+	Arguments and temporary variables: 
+		anObject: 	a ZnOptions
+		aBlock: 	[
+		| result |
+		self prepareRequest.
+		result := self executeHandl[..]
+		activeProcess: 	a Process in nil
+		oldValue: 	nil
+	Receiver's instance variables: 
+		index: 	3
+
+
+FullBlockClosure(BlockClosure)>>ensure:
+	Receiver: [ activeProcess
+			psValueAt: index
+			put: anObject.
+		aBlock value ]
+	Arguments and temporary variables: 
+		aBlock: 	[
+			activeProcess
+				psValueAt: index
+				put: oldValue ]
+		handler: 	[
+			activeProcess
+				psValueAt: index
+				put: oldValue ]
+		complete: 	nil
+		returnValue: 	nil
+	Receiver's instance variables: 
+		outerContext: 	ZnCurrentOptions(DynamicVariable)>>value:during:
+		compiledBlock: 	a CompiledBlock: [ activeProcess
+			psValueAt: index
+			put:[..]
+		numArgs: 	0
+		receiver: 	a ZnCurrentOptions
+
+
+ZnCurrentOptions(DynamicVariable)>>value:during:
+	Receiver: a ZnCurrentOptions
+	Arguments and temporary variables: 
+		anObject: 	a ZnOptions
+		aBlock: 	[
+		| result |
+		self prepareRequest.
+		result := self executeHandl[..]
+		activeProcess: 	a Process in nil
+		oldValue: 	nil
+	Receiver's instance variables: 
+		index: 	3
+
+
+ZnCurrentOptions class(DynamicVariable class)>>value:during:
+	Receiver: ZnCurrentOptions
+	Arguments and temporary variables: 
+		anObject: 	a ZnOptions
+		aBlock: 	[
+		| result |
+		self prepareRequest.
+		result := self executeHandl[..]
+	Receiver's instance variables: 
+		superclass: 	DynamicVariable
+		methodDict: 	a MethodDictionary()
+		format: 	65537
+		layout: 	a FixedLayout
+		protocols: 	#()
+		subclasses: 	nil
+		name: 	#ZnCurrentOptions
+		classPool: 	nil
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemEnvironment(lots of globals)
+		commentSourcePointer: 	89218168
+		packageTag: 	a PackageTag(Uncategorized)
+		soleInstance: 	a ZnCurrentOptions
+
+
+[ ZnCurrentOptions value: self during: block ] in ZnOptions>>conditionallyDuring:
+	Receiver: a ZnOptions
+	Arguments and temporary variables: 
+		block: 	[
+		| result |
+		self prepareRequest.
+		result := self executeHandli[..]
+	Receiver's instance variables: 
+		options: 	a Dictionary(#socketStreamTimeout->15 )
+		parent: 	a ZnOptions
+		writable: 	true
+
+
+UndefinedObject>>ifNil:ifNotNil:
+	Receiver: nil
+	Arguments and temporary variables: 
+		nilBlock: 	[ ZnCurrentOptions value: self during: block ]
+		ifNotNilBlock: 	[
+		| result |
+		self prepareRequest.
+		result := self execu[..]
+	Receiver's instance variables: 
+nil
+
+ZnOptions>>conditionallyDuring:
+	Receiver: a ZnOptions
+	Arguments and temporary variables: 
+		block: 	[
+		| result |
+		self prepareRequest.
+		result := self executeHandli[..]
+	Receiver's instance variables: 
+		options: 	a Dictionary(#socketStreamTimeout->15 )
+		parent: 	a ZnOptions
+		writable: 	true
+
+
+ZnClient>>withDynamicVariablesDo:
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+		block: 	[
+		| result |
+		self prepareRequest.
+		result := self executeHandli[..]
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+ZnClient>>execute
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+ZnClient>>post
+	Receiver: a ZnClient
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		request: 	a ZnRequest(POST /)
+		response: 	nil
+		connection: 	nil
+		lastUsed: 	nil
+		options: 	a Dictionary(#autoResetEntityMethods->#(#HEAD #DELETE) #ifFailBloc[..]
+		session: 	nil
+		logLevel: 	3
+		newOptions: 	a ZnOptions
+
+
+[
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+  				contents: payload;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+          
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] in [
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+  				contents: payload;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+          
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+	Receiver: nil
+	Arguments and temporary variables: 
+		sql: 	'Select * From abdullah;'
+		body: 	'Select * From abdullah'
+		valid: 	true
+		endsWithSemi: 	true
+		rest: 	'* From abdullah'
+		lc: 	'select * from abdullah'
+		fromPos: 	9
+		afterFrom: 	'abdullah'
+		jsonEscaped: 	'Select * From abdullah'
+		payload: 	'{"sql":"Select * From abdullah"}'
+		serverUrl: 	''
+		client: 	a ZnClient
+		resp: 	nil
+		status: 	nil
+		respBody: 	nil
+	Receiver's instance variables: 
+nil
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+         [..]
+	Arguments and temporary variables: 
+		exception: 	ZnHttpUnsuccessful
+		handlerAction: 	[ :ex | UIManager default alert: 'HTTP error: ', ex response[..]
+	Receiver's instance variables: 
+		outerContext: 	[
+    [
+        client := ZnClient new.
+        client
+      [..]
+		compiledBlock: 	a CompiledBlock: [
+        client := ZnClient new.
+        c[..]
+		numArgs: 	0
+		receiver: 	nil
+
+
+[
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+  				contents: payload;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+          
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+	Receiver: nil
+	Arguments and temporary variables: 
+		sql: 	'Select * From abdullah;'
+		body: 	'Select * From abdullah'
+		valid: 	true
+		endsWithSemi: 	true
+		rest: 	'* From abdullah'
+		lc: 	'select * from abdullah'
+		fromPos: 	9
+		afterFrom: 	'abdullah'
+		jsonEscaped: 	'Select * From abdullah'
+		payload: 	'{"sql":"Select * From abdullah"}'
+		serverUrl: 	''
+		client: 	a ZnClient
+		resp: 	nil
+		status: 	nil
+		respBody: 	nil
+	Receiver's instance variables: 
+nil
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+   [..]
+	Arguments and temporary variables: 
+		exception: 	NetworkError
+		handlerAction: 	[ :ex | UIManager default alert: 'Network error: ', ex messa[..]
+	Receiver's instance variables: 
+		outerContext: 	UndefinedObject>>DoIt
+		compiledBlock: 	a CompiledBlock: [
+    [
+        client := ZnClient new.
+   [..]
+		numArgs: 	0
+		receiver: 	nil
+
+
+UndefinedObject>>DoIt
+	Receiver: nil
+	Arguments and temporary variables: 
+		client: 	a ZnClient
+		resp: 	nil
+		status: 	nil
+		respBody: 	nil
+		sql: 	'Select * From abdullah;'
+		body: 	'Select * From abdullah'
+		valid: 	true
+		endsWithSemi: 	true
+		rest: 	'* From abdullah'
+		lc: 	'select * from abdullah'
+		fromPos: 	9
+		afterFrom: 	'abdullah'
+		jsonEscaped: 	'Select * From abdullah'
+		payload: 	'{"sql":"Select * From abdullah"}'
+		serverUrl: 	''
+	Receiver's instance variables: 
+nil
+
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+	Receiver: an OCReceiverDoItSemanticScope
+	Arguments and temporary variables: 
+		doItMethod: 	UndefinedObject>>#DoIt
+	Receiver's instance variables: 
+		outerScope: 	nil
+		targetReceiver: 	nil
+
+
+OpalCompiler>>evaluate
+	Receiver: an OpalCompiler
+	Arguments and temporary variables: 
+		value: 	nil
+		doItMethod: 	UndefinedObject>>#DoIt
+	Receiver's instance variables: 
+		ast: 	DoIt
+
+	| sql "Part 1 — SELECT-only validator (build + send JSON payloa[..]
+		source: 	'"Part 1 — SELECT-only validator (build + send JSON payload)"
+| sql[..]
+		compilationContext: 	an OCCompilationContext
+		compilationContextClass: 	nil
+		permitFaulty: 	false
+		permitUndeclared: 	false
+		failBlock: 	[ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncem[..]
+		logged: 	nil
+		changeStamp: 	nil
+		protocol: 	nil
+		requestor: 	a StPlaygroundInteractionModel
+		priorMethod: 	nil
+
+
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		result := self interactionModel compiler
+			source: aString;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self refreshStyling ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError:
+	Receiver: a SpCodePresenter
+	Arguments and temporary variables: 
+		aString: 	'"Part 1 — SELECT-only validator (build + send JSON payload)"
+| sq[..]
+		compileErrorBlock: 	[ ^ self ]
+		errorBlock: 	[ :e | e pass ]
+		result: 	nil
+		oldBindings: 	a Dictionary(#afterFrom->nil #body->nil #client->nil #endsWith[..]
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicCodeAdapter)
+		announcer: 	an Announcer
+		owner: 	a StPlaygroundPagePresenter
+		adapter: 	a SpMorphicCodeAdapter
+		needRebuild: 	true
+		eventHandler: 	a SpEventHandler
+		properties: 	a SmallDictionary()
+		application: 	nil
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Code' ]
+		additionalSubpresentersMap: 	nil
+		layout: 	an ObservableValueHolder[ a SpAbstractWidgetLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ a SpCommandGroup ]
+		internalActionGroup: 	a SpActionGroup
+		borderWidth: 	an ObservableValueHolder[ nil ]
+		borderColor: 	an ObservableValueHolder[ nil ]
+		dragEnabled: 	an ObservableValueHolder[ false ]
+		dropEnabled: 	an ObservableValueHolder[ false ]
+		color: 	an ObservableValueHolder[ nil ]
+		help: 	an ObservableValueHolder[ nil ]
+		enabled: 	an ObservableValueHolder[ true ]
+		wantsDrop: 	an ObservableValueHolder[ [ :transfer | self dropEnabled ] ]
+		acceptDrop: 	an ObservableValueHolder[ [ :transfer | ] ]
+		deferredActions: 	nil
+		selection: 	an ObservableValueHolder[ (1 to: 2835) ]
+		text: 	an ObservableValueHolder[ '"Part 1 — SELECT-only validator (build + s[..]
+		actionToPerform: 	an ObservableValueHolder[ [ :txt |  ] ]
+		readSelection: 	an ObservableValueHolder[ [ selection ] ]
+		placeholder: 	an ObservableValueHolder[ '' ]
+		editable: 	an ObservableValueHolder[ true ]
+		contextMenu: 	an ObservableValueHolder[ nil ]
+		scrollValue: 	an ObservableValueHolder[ (0@1.0) ]
+		editionContextMenu: 	an ObservableValueHolder[ true ]
+		wrapWord: 	an ObservableValueHolder[ true ]
+		undoRedoHistory: 	true
+		wrapScrollBars: 	true
+		propagateNaturalHeight: 	false
+		propagateNaturalWidth: 	false
+		scrollBarStyles: 	#()
+		syntaxHighlight: 	an ObservableValueHolder[ true ]
+		smartCharacters: 	an ObservableValueHolder[ true ]
+		lineNumbers: 	an ObservableValueHolder[ true ]
+		interactionModel: 	an ObservableValueHolder[ a StPlaygroundInteractionModel ]
+		overrideContextMenu: 	true
+		submitBlock: 	nil
+		resetBlock: 	nil
+		environment: 	nil
+		systemNavigation: 	nil
+		syntaxHighlightTheme: 	an ObservableValueHolder[ nil ]
+		styleScheme: 	nil
+
+
+FullBlockClosure(BlockClosure)>>on:do:
+	Receiver: [
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+[..]
+	Arguments and temporary variables: 
+		exception: 	Error
+		handlerAction: 	[ :e |
+		self announcer announce: (SpCodeEvaluationFailedAnn[..]
+	Receiver's instance variables: 
+		outerContext: 	SpCodePresenter>>evaluate:onCompileError:onError:
+		compiledBlock: 	a CompiledBlock: [
+		self announcer announce: (SpCodeWillBeE[..]
+		numArgs: 	0
+		receiver: 	a SpCodePresenter
+
+
+SpCodePresenter>>evaluate:onCompileError:onError:
+	Receiver: a SpCodePresenter
+	Arguments and temporary variables: 
+		result: 	nil
+		oldBindings: 	a Dictionary(#afterFrom->nil #body->nil #client->nil #endsWith[..]
+		aString: 	'"Part 1 — SELECT-only validator (build + send JSON payload)"
+| sq[..]
+		compileErrorBlock: 	[ ^ self ]
+		errorBlock: 	[ :e | e pass ]
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicCodeAdapter)
+		announcer: 	an Announcer
+		owner: 	a StPlaygroundPagePresenter
+		adapter: 	a SpMorphicCodeAdapter
+		needRebuild: 	true
+		eventHandler: 	a SpEventHandler
+		properties: 	a SmallDictionary()
+		application: 	nil
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Code' ]
+		additionalSubpresentersMap: 	nil
+		layout: 	an ObservableValueHolder[ a SpAbstractWidgetLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ a SpCommandGroup ]
+		internalActionGroup: 	a SpActionGroup
+		borderWidth: 	an ObservableValueHolder[ nil ]
+		borderColor: 	an ObservableValueHolder[ nil ]
+		dragEnabled: 	an ObservableValueHolder[ false ]
+		dropEnabled: 	an ObservableValueHolder[ false ]
+		color: 	an ObservableValueHolder[ nil ]
+		help: 	an ObservableValueHolder[ nil ]
+		enabled: 	an ObservableValueHolder[ true ]
+		wantsDrop: 	an ObservableValueHolder[ [ :transfer | self dropEnabled ] ]
+		acceptDrop: 	an ObservableValueHolder[ [ :transfer | ] ]
+		deferredActions: 	nil
+		selection: 	an ObservableValueHolder[ (1 to: 2835) ]
+		text: 	an ObservableValueHolder[ '"Part 1 — SELECT-only validator (build + s[..]
+		actionToPerform: 	an ObservableValueHolder[ [ :txt |  ] ]
+		readSelection: 	an ObservableValueHolder[ [ selection ] ]
+		placeholder: 	an ObservableValueHolder[ '' ]
+		editable: 	an ObservableValueHolder[ true ]
+		contextMenu: 	an ObservableValueHolder[ nil ]
+		scrollValue: 	an ObservableValueHolder[ (0@1.0) ]
+		editionContextMenu: 	an ObservableValueHolder[ true ]
+		wrapWord: 	an ObservableValueHolder[ true ]
+		undoRedoHistory: 	true
+		wrapScrollBars: 	true
+		propagateNaturalHeight: 	false
+		propagateNaturalWidth: 	false
+		scrollBarStyles: 	#()
+		syntaxHighlight: 	an ObservableValueHolder[ true ]
+		smartCharacters: 	an ObservableValueHolder[ true ]
+		lineNumbers: 	an ObservableValueHolder[ true ]
+		interactionModel: 	an ObservableValueHolder[ a StPlaygroundInteractionModel ]
+		overrideContextMenu: 	true
+		submitBlock: 	nil
+		resetBlock: 	nil
+		environment: 	nil
+		systemNavigation: 	nil
+		syntaxHighlightTheme: 	an ObservableValueHolder[ nil ]
+		styleScheme: 	nil
+
+
+StPlaygroundPagePresenter>>doEvaluateAndGo
+	Receiver: a StPlaygroundPagePresenter
+	Arguments and temporary variables: 
+		value: 	nil
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicBoxAdapter)
+		announcer: 	an Announcer
+		owner: 	a SpMillerColumnPresenter
+		adapter: 	a SpMorphicBoxAdapter
+		needRebuild: 	true
+		eventHandler: 	nil
+		properties: 	a SmallDictionary()
+		application: 	a StPharoApplication
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Playground' ]
+		additionalSubpresentersMap: 	a Dictionary()
+		layout: 	an ObservableValueHolder[ a SpBoxLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ nil ]
+		internalActionGroup: 	nil
+		text: 	a SpCodePresenter
+		toolbar: 	a SpToolbarPresenter
+		statusbar: 	a SpPresenter
+		lineLabel: 	a SpLabelPresenter
+		toggleLineNumberButton: 	a SpToggleButtonPresenter
+		page: 	a StPlaygroundPage
+		activationBlock: 	[ :selection |
+		self changeSelection: selection from: new[..]
+		loading: 	false
+
+
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+	Receiver: a StPlaygroundPagePresenter
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		dependents: 	a DependentsArray(a SpMorphicBoxAdapter)
+		announcer: 	an Announcer
+		owner: 	a SpMillerColumnPresenter
+		adapter: 	a SpMorphicBoxAdapter
+		needRebuild: 	true
+		eventHandler: 	nil
+		properties: 	a SmallDictionary()
+		application: 	a StPharoApplication
+		focusOrder: 	nil
+		contextKeyBindings: 	an ObservableValueHolder[ nil ]
+		windowIcon: 	an ObservableValueHolder[ nil ]
+		aboutText: 	an ObservableValueHolder[ nil ]
+		askOkToClose: 	an ObservableValueHolder[ false ]
+		titleHolder: 	an ObservableValueHolder[ 'Playground' ]
+		additionalSubpresentersMap: 	a Dictionary()
+		layout: 	an ObservableValueHolder[ a SpBoxLayout ]
+		visible: 	an ObservableValueHolder[ true ]
+		extent: 	an ObservableValueHolder[ nil ]
+		styles: 	#()
+		userActionGroup: 	an ObservableValueHolder[ nil ]
+		internalActionGroup: 	nil
+		text: 	a SpCodePresenter
+		toolbar: 	a SpToolbarPresenter
+		statusbar: 	a SpPresenter
+		lineLabel: 	a SpLabelPresenter
+		toggleLineNumberButton: 	a SpToggleButtonPresenter
+		page: 	a StPlaygroundPage
+		activationBlock: 	[ :selection |
+		self changeSelection: selection from: new[..]
+		loading: 	false
+
+
+StPlaygroundDoItCommand>>execute
+	Receiver: a StPlaygroundDoItCommand
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		context: 	a StPlaygroundPagePresenter
+		basicName: 	'Do it all'
+		basicDescription: 	'Do it all and inspect.'
+
+
+SpCommand(CmCommandDecorator)>>execute
+	Receiver: a SpCommand(Do it all)
+	Arguments and temporary variables: 
+x
+	Receiver's instance variables: 
+		decoratedCommand: 	a StPlaygroundDoItCommand
+		iconProvider: 	a StPharoApplication
+		iconName: 	#go
+		shortcutKey: 	nil
+		displayStrategy: 	a CmUIDisableWhenCantBeRun
+		positionStrategy: 	a CmUILeftPositionStrategy
+		buildPresenterBlock: 	[ :specCommand | 
+		aButtonClass new
+			label: specCom[..]
+		presenter: 	a SpToolbarButtonPresenter
+
+
+
+--- The full stack ---
+UndefinedObject(Object)>>error:
+UndefinedObject(Object)>>errorNotIndexable
+UndefinedObject(Object)>>size
+ByteString(SequenceableCollection)>>copyReplaceFrom:to:with:
+ByteString(SequenceableCollection)>>,
+ZnClient>>newConnectionTo:
+ZnClient>>getConnectionAndExecute
+ZnClient>>executeWithRedirectsRemaining:trail:
+[ self 
+			executeWithRedirectsRemaining: self maxNumberOfRedirects
+			trail: OrderedCollection new ] in ZnClient>>executeWithRetriesRemaining:
+FullBlockClosure(BlockClosure)>>on:do:
+ZnClient>>executeWithRetriesRemaining:
+[ self executeWithRetriesRemaining: self numberOfRetries ] in ZnClient>>executeHandlingErrors
+FullBlockClosure(BlockClosure)>>on:do:
+ZnClient>>executeHandlingErrors
+[
+		| result |
+		self prepareRequest.
+		result := self executeHandlingErrors.
+		self prepareNextRequest.
+		result ] in ZnClient>>execute
+[ activeProcess
+			psValueAt: index
+			put: anObject.
+		aBlock value ] in ZnCurrentOptions(DynamicVariable)>>value:during:
+FullBlockClosure(BlockClosure)>>ensure:
+ZnCurrentOptions(DynamicVariable)>>value:during:
+ZnCurrentOptions class(DynamicVariable class)>>value:during:
+[ ZnCurrentOptions value: self during: block ] in ZnOptions>>conditionallyDuring:
+UndefinedObject>>ifNil:ifNotNil:
+ZnOptions>>conditionallyDuring:
+ZnClient>>withDynamicVariablesDo:
+ZnClient>>execute
+ZnClient>>post
+[
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+  				contents: payload;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+          
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] in [
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+  				contents: payload;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+          
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+FullBlockClosure(BlockClosure)>>on:do:
+[
+    [
+        client := ZnClient new.
+        client
+            url: serverUrl;
+            timeout: 15;
+  				contents: payload;
+            contentType: ZnMimeType applicationJson;
+            accept: ZnMimeType applicationJson;
+          
+            post.
+        
+        resp := client response.
+        status := resp code.
+        respBody := resp hasEntity 
+            ifTrue: [ resp contents ] 
+            ifFalse: [ '' ].
+        
+        Transcript
+            cr; show: '--- HTTP Response ---'; cr;
+            show: 'Status: ', status asString; cr;
+            show: 'Body:   ', respBody; cr;
+            show: '-----------------------'; cr.
+        
+        UIManager default inform:
+            'Sent to: ', serverUrl, String cr,
+            'Status: ', status asString, String cr,
+            'Response body (first 500 chars): ', (respBody first: (respBody size min: 500))
+            
+    ] on: ZnHttpUnsuccessful 
+    do: [ :ex | UIManager default alert: 'HTTP error: ', ex response code asString ]
+] in UndefinedObject>>DoIt
+FullBlockClosure(BlockClosure)>>on:do:
+UndefinedObject>>DoIt
+OCReceiverDoItSemanticScope(OCDoItSemanticScope)>>evaluateDoIt:
+OpalCompiler>>evaluate
+[
+		self announcer announce: (SpCodeWillBeEvaluatedAnnouncement newContent: aString).
+		oldBindings := self interactionModel bindings copy.
+		result := self interactionModel compiler
+			source: aString;
+			environment: self environment;
+			failBlock:  [ 
+				self announcer announce: (SpCodeEvaluationFailedAnnouncement newContent: aString).
+				^ compileErrorBlock value ];
+			evaluate.
+		oldBindings size = self interactionModel bindings size 
+			ifFalse: [ self refreshStyling ].
+		self announcer announce: (SpCodeEvaluationSucceedAnnouncement newContent: aString).
+		result ] in SpCodePresenter>>evaluate:onCompileError:onError:
+FullBlockClosure(BlockClosure)>>on:do:
+SpCodePresenter>>evaluate:onCompileError:onError:
+StPlaygroundPagePresenter>>doEvaluateAndGo
+StPlaygroundPagePresenter>>doEvaluateAllAndGo
+StPlaygroundDoItCommand>>execute
+SpCommand(CmCommandDecorator)>>execute
+ - - - - - - - - - - - - - - -
+			- - - - - - - - - - - - - - - - - -
+[ specCommand execute ] in [ :specCommand | 
+		aButtonClass new
+			label: specCommand name;
+			help: specCommand description;
+			in: [ :button | 
+				specCommand hasIcon
+					ifTrue: [ button icon: specCommand icon ] ];
+			action: [ specCommand execute ];
+			enabled: specCommand canBeExecuted;
+			yourself ] in SpCommand>>configureAsButtonOfClass:
+FullBlockClosure(BlockClosure)>>cull:
+SpMorphicToolbarButtonAdapter>>execute
+SpToolbarButtonMorph(PluggableButtonMorph)>>performAction:
+[:m |
+		(m containsPoint: evt cursorPoint) ifTrue: [m enabled ifTrue: [ m performAction: evt ]]] in SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+Array(SequenceableCollection)>>do:
+SpToolbarButtonMorph(PluggableButtonMorph)>>mouseUp:
+SpToolbarButtonMorph(Morph)>>handleMouseUp:
+MouseButtonEvent>>sentTo:
+SpToolbarButtonMorph(Morph)>>handleEvent:
+SpToolbarButtonMorph(Morph)>>handleFocusEvent:
+[
+		result := focusHolder handleFocusEvent: transformedEvent.
+	] in HandMorph>>sendFocusEvent:to:clear:
+FullBlockClosure(BlockClosure)>>on:do:
+WorldMorph>>becomeActiveDuring:
+HandMorph>>sendFocusEvent:to:clear:
+HandMorph>>sendEvent:focus:clear:
+HandMorph>>sendMouseEvent:
+HandMorph>>handleEvent:
+[
+		(morphicWorld activeHand isNotNil and: [ anEvent hand isNotNil ]) ifTrue: [
+			morphicWorld activeHand handleEvent: anEvent
+		]
+	] in OSWindowMorphicEventHandler>>dispatchMorphicEvent:
+WorldState>>runStepMethodsIn:
+WorldMorph>>runStepMethods
+WorldState>>doOneCycleFor:
+WorldMorph>>doOneCycleNow
+WorldMorph>>doOneCycle
+[
+		| extraWorldsToDraw |
+		extraWorldsToDraw := ExtraWorldListMutex critical: [
+			                     self extraWorldList ].
+		extraWorldsToDraw do: [ :world | world doOneCycle ].
+
+		(self currentWorld isNotNil and: [
+			 (extraWorldsToDraw includes: self currentWorld) not ]) ifTrue: [
+			self currentWorld doOneCycle ] ] in WorldMorph class>>doOneCycle
+FullBlockClosure(BlockClosure)>>ensure:
+WorldState class>>doDrawCycleWith:
+WorldMorph class>>doOneCycle
+MorphicRenderLoop>>doOneCycle
+MorphicRenderLoop>>doOneCycleWhile:
+[ MorphicRenderLoop new doOneCycleWhile: [ true ] ] in MorphicUIManager>>spawnNewProcess
+[self value.
+			"IMPORTANT: Do not step over next line of code. See method comments for details"
+			Processor terminateRealActive] in FullBlockClosure(BlockClosure)>>newProcess
+-------------------------------------------------------------------------------
+

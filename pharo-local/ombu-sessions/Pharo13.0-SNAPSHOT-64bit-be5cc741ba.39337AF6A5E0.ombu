@@ -1,0 +1,9 @@
+OmEntry {
+	#tags : {
+		#prior : OmReference [ 'Pharo13.0-SNAPSHOT-64bit-be5cc741ba.38C8AE71BC40', '1' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpSessionSnapshot {
+		#imageName : '/Users/abdullahfazli/Documents/Pharo/images/GraphDB-Client/GraphDB-Client.image'
+	}
+}
